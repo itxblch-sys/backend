@@ -147,3 +147,8 @@ Give feedback in this EXACT JSON format (no extra text):
         "word_count": word_count,
         "feedback": ai_feedback
     }
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
